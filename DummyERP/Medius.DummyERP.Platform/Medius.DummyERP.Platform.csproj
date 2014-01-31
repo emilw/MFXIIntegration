@@ -42,11 +42,27 @@
       <HintPath>C:\Users\emilw\Source\Repos\mfa\PackageRepository\core\Server\Binaries\Medius.Core.Platform.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Medius.Enterprise.Common">
+      <HintPath>C:\Users\emilw\Source\Repos\mfa\PackageRepository\Enterprise\Shared\Binaries\Medius.Enterprise.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Medius.ExpenseInvoice.Common">
       <HintPath>C:\Users\emilw\Source\Repos\mfa\PackageRepository\ExpenseInvoice\Shared\Binaries\Medius.ExpenseInvoice.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Medius.PurchaseToPay.Common">
+      <HintPath>C:\Users\emilw\Source\Repos\mfa\PackageRepository\PurchaseToPay\Shared\Binaries\Medius.PurchaseToPay.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MediusTransformer">
+      <HintPath>..\..\Integration\ExternalLib\MediusTransformer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition.CodePlex">
+      <HintPath>C:\Users\emilw\Source\Repos\mfa\Platform\MediusflowBackendRuntime\System.ComponentModel.Composition.CodePlex.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,8 +71,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="IntegrationMessageHandler\ExpenseInvoicePostingVoucherResponsePreliminary.cs" />
+    <Compile Include="IntegrationMessageHandler\SupplierInvoicePostingVoucherResponse.cs" />
+    <Compile Include="IntegrationMessageHandler\ExpenseInvoicePostingVoucherResponse.cs" />
+    <Compile Include="MasterDataImportHandler\AccountImport.cs" />
+    <Compile Include="MasterDataImportHandler\PaymentTermImport.cs" />
+    <Compile Include="MasterDataImportHandler\CurrencyRateImport.cs" />
+    <Compile Include="MasterDataImportHandler\CurrencyImport.cs" />
+    <Compile Include="MasterDataImportHandler\SPCSImportHandlerBase.cs" />
+    <Compile Include="MasterDataImportHandler\SupplierImport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setup\Setup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Integration\Medius.Integration.Common\Medius.Integration.Common.csproj">
+      <Project>{a4047717-c449-4125-a052-daa2894dd4d7}</Project>
+      <Name>Medius.Integration.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Medius.Integration.Platform.Common\Medius.Integration.Platform.Common.csproj">
+      <Project>{d612c70a-91e2-4205-b5f5-e89fefb11d3b}</Project>
+      <Name>Medius.Integration.Platform.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Medius.DummyERP.Common\Medius.DummyERP.Common.csproj">
+      <Project>{e78f2776-99c6-4b1b-a603-1ddbfde6c523}</Project>
+      <Name>Medius.DummyERP.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

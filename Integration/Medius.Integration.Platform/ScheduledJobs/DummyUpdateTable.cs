@@ -17,8 +17,8 @@ namespace Medius.Integration.Platform.ScheduledJobs
 
         public override void RunJob(ScheduledJobConfiguration configuration)
         {
-            var entity = new DummyEntity() { TestProperty = "Dude" };
-            Repository.Save(ref entity);
+            /*var entity = new DummyEntity() { TestProperty = "Dude" };
+            Repository.Save(ref entity);*/
 
         }
     }

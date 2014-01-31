@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A4047717-C449-4125-A052-DAA2894DD4D7}</ProjectGuid>
+    <ProjectGuid>{D612C70A-91E2-4205-B5F5-E89FEFB11D3B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Medius.Integration</RootNamespace>
-    <AssemblyName>Medius.Integration.Common</AssemblyName>
+    <RootNamespace>Medius.Integration.Platform</RootNamespace>
+    <AssemblyName>Medius.Integration.Platform.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>C:\Users\emilw\Source\Repos\mfa\PackageRepository\Integration\Shared\Binaries\</OutputPath>
+    <OutputPath>C:\Users\emilw\Source\Repos\mfa\PackageRepository\Integration\Server\Binaries\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -38,9 +38,21 @@
       <HintPath>C:\Users\emilw\Source\Repos\mfa\PackageRepository\core\Shared\Binaries\Medius.Core.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Medius.Core.Platform.Common">
+      <HintPath>C:\Users\emilw\Source\Repos\mfa\PackageRepository\core\Server\Binaries\Medius.Core.Platform.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MediusTransformer, Version=11.0.3.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLib\MediusTransformer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition.CodePlex, Version=4.1.2.0, Culture=neutral, PublicKeyToken=13e5ffd4e05db186, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\emilw\Source\Repos\mfa\Platform\MediusflowBackendRuntime\System.ComponentModel.Composition.CodePlex.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +60,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessRulePerspectives\GenericMasterDataSourcePerspective.cs" />
+    <Compile Include="BusinessRulePerspectives\IntegrationMessagePerspective.cs" />
+    <Compile Include="BusinessRulePerspectives\IntegrationMasterDataImportPerspective.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Entities\DummyEntity.cs" />
-    <Compile Include="Entities\IntegrationHandlerConfiguration.cs" />
+    <Compile Include="MasterDataHandler\BaseMasterDataHandler.cs" />
+    <Compile Include="MasterDataHandler\GenericMasterDataHandler.cs" />
+    <Compile Include="MessageHandler\BaseIntegrationMessageHandler.cs" />
+    <Compile Include="MessageHandler\GenericIntegrationMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchedulerAction\IIntegrationMessageHandlerSync.cs" />
+    <Compile Include="SchedulerAction\IIntegrationMessageHandlerAsync.cs" />
+    <Compile Include="SchedulerAction\IIntegrationMessageHandler.cs" />
+    <Compile Include="SchedulerAction\IMasterDataHandler.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

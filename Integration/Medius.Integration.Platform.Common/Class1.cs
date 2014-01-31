@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Medius.DummyERP.Platform
+namespace Medius.Integration.Platform.Common
 {
     public class Class1
     {

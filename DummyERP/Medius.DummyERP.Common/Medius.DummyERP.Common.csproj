@@ -7,7 +7,7 @@
     <ProjectGuid>{E78F2776-99C6-4B1B-A603-1DDBFDE6C523}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Medius.DummyERP.Common</RootNamespace>
+    <RootNamespace>Medius.DummyERP</RootNamespace>
     <AssemblyName>Medius.DummyERP.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

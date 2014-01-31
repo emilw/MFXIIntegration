@@ -12,8 +12,8 @@ namespace Medius.Integration.Platform.Setup
     {
         public override void Run()
         {
-            RegisterJobConfiguration("DummyIntegrationUpdate", typeof(Medius.Integration.Platform.ScheduledJobs.DummyUpdateTable).FullName, new DateTime(2013, 01, 01), new DateTime(2700, 01, 01), new TimeSpan(0,0,20));
-            RegisterJobConfiguration("IntegrationQueueReaderJob", typeof(Medius.Integration.Platform.ScheduledJobs.IntegrationQueueReaderJob).FullName, new DateTime(2013, 01, 01), new DateTime(2700, 01, 01), new TimeSpan(0, 0, 20));
+            //RegisterJobConfiguration("MasterDataImportJob", typeof(Medius.Integration.Platform.ScheduledJobs.MasterDataImportJob).FullName, new DateTime(2013, 01, 01), new DateTime(2700, 01, 01), new TimeSpan(0,0,20));
+            //RegisterJobConfiguration("IntegrationQueueReaderJob", typeof(Medius.Integration.Platform.ScheduledJobs.IntegrationQueueReaderJob).FullName, new DateTime(2013, 01, 01), new DateTime(2700, 01, 01), new TimeSpan(0, 0, 20));
         }
 
         private void RegisterJobConfiguration(string name, string jobName, DateTime start, DateTime stop,

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Medius.Data;
 
-namespace Medius.DummyERP.Common.Entities
+namespace Medius.DummyERP.Entities
 {
     public class DummyVoucherNumber : DataDefinition
     {
